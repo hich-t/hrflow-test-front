@@ -8,7 +8,6 @@ import SearchAndFilter from "@/components/SearchAndFilter/SearchandFilter"
 
 const HomePage = () => {
 
-    // darkmode handling
     const { isDarkMode, toggleDarkMode } = useAppContext();
     const bgColor = isDarkMode ? "bg-darkblue" : "bg-white";
     const textColor = isDarkMode ? "text-white" : "text-darkblue";

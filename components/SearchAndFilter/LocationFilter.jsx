@@ -9,7 +9,6 @@ const LocationFilter = ({ onChange }) => {
   const [query, setQuery] = useState('');
   const textColor = isDarkMode ? 'text-white' : 'text-darkblue';
 
-  // Extract unique locations from jobs array
   const locations = Array.from(new Set(jobs.map(job => job.location?.text).filter(Boolean)));
 
   const filteredLocations = query === ''

@@ -8,7 +8,7 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 const JobsCards = () => {
   const [expandedJobId, setExpandedJobId] = useState(null);
-  const [sortBy, setSortBy] = useState("name"); // Default sorting by name
+  const [sortBy, setSortBy] = useState("name"); 
   const { filteredJobs, loading, isDarkMode, error, isEmpty } = useAppContext();
 
   const bgColor = isDarkMode ? "bg-darkblue" : "bg-white";
@@ -61,15 +61,15 @@ const JobsCards = () => {
     } else if (sortBy === "dateOld") {
       sorted.sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
     }
-    updateJobCard(sorted); // Update jobCard with sorted jobs
-  }, [filteredJobs, sortBy]); // Re-run effect when filteredJobs or sortBy changes
+    updateJobCard(sorted); 
+  }, [filteredJobs, sortBy]); 
 
   const handleOnDragEnd = (result) => {
     if (!result.destination) return;
     const items = Array.from(jobCard);
     const [reorderedItem] = items.splice(result.source.index, 1);
     items.splice(result.destination.index, 0, reorderedItem);
-    updateJobCard(items); // Update jobCard with new order
+    updateJobCard(items); 
   };
 
   if (error) {
@@ -136,14 +136,15 @@ const JobsCards = () => {
         )}
       </Menu>
       <DragDropContext onDragEnd={handleOnDragEnd}>
-        <Droppable  
-        droppableId="jobcards">
+        <Droppable droppableId="jobcards">
           {(provided) => (
-            <div 
-            className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full sm:w-4/5 items-center justify-items-center" 
-            ref={provided.innerRef} {...provided.droppableProps}>
+            <div
+              className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full sm:w-4/5 items-center justify-items-center"
+              ref={provided.innerRef}
+              {...provided.droppableProps}
+            >
               {jobCard.map((job, index) => (
-                <Draggable 
+                <Draggable
                   key={job.id.toString()}
                   draggableId={job.id.toString()}
                   index={index}

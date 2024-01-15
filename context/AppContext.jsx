@@ -28,14 +28,12 @@ export const AppProvider = ({ children }) => {
           .filter((tag) => tag.name.toLowerCase() === "category" && tag.value)
           .map((tag) => {
             let categoryName = tag.value.trim().toLowerCase();
-            // Correct the misspelled category name
             if (categoryName === "humain resources") {
               categoryName = "human resources";
             }
             return categoryName;
           });
   
-        // Removing duplicates and converting them back to title case for display
         setCategories([...new Set(newCategories)].map(category => 
           category.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
         ));
