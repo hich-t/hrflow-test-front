@@ -12,7 +12,7 @@ The application is hosted on vercel and can be accessed at [HrFlow Job Listings]
 
 **Responsive Design**
 Optimized for both mobile and desktop screens.
-<br/><img src="https://raw.githubusercontent.com/hich-t/hrflow-test-front/main/public/Assets/images/screenshots/mobile.jpg" width="50%"/>
+<br/><img src="https://raw.githubusercontent.com/hich-t/hrflow-test-front/main/public/Assets/images/screenshots/mobile.jpg" width="20%"/>
 
 
 **Filters**
