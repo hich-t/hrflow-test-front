@@ -2,14 +2,21 @@ import React, { useState, useEffect } from "react";
 import { useAppContext } from "../../context/AppContext";
 import SearchBar from "./SearchBar";
 import CategoryFilter from "./CategoryFilter";
-import LocationFilter from "./LocationFilter"; 
+import LocationFilter from "./LocationFilter";
 
 const SearchAndFilter = () => {
   const { jobs, setFilteredJobs, isDarkMode } = useAppContext();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
-  const [selectedLocation, setSelectedLocation] = useState(""); 
+  const [selectedLocation, setSelectedLocation] = useState("");
   const textColor = isDarkMode ? "text-white" : "text-darkblue";
+
+  useEffect(() => {
+    // Initialize state from localStorage
+    setSearchQuery(localStorage.getItem("searchQuery") || "");
+    setSelectedCategory(localStorage.getItem("selectedCategory") || "");
+    setSelectedLocation(localStorage.getItem("selectedLocation") || "");
+  }, []);
 
   useEffect(() => {
     const filtered = jobs.filter((job) => {
@@ -35,15 +42,17 @@ const SearchAndFilter = () => {
 
   const handleSearch = (query) => {
     setSearchQuery(query);
+    localStorage.setItem("searchQuery", query);
   };
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
+    localStorage.setItem("selectedCategory", category);
   };
 
   const handleLocationChange = (location) => {
-    // Handle location change
     setSelectedLocation(location);
+    localStorage.setItem("selectedLocation", location);
   };
 
   return (

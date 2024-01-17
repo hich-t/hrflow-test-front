@@ -11,9 +11,8 @@ export const AppProvider = ({ children }) => {
   const [categories, setCategories] = useState([]);
   const [types, setTypes] = useState([]);
   const [companies, setCompanies] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
 
   useEffect(() => {
     setLoading(true);
@@ -22,7 +21,7 @@ export const AppProvider = ({ children }) => {
         const jobsArray = data.data.jobs || [];
         setJobs(jobsArray);
         setFilteredJobs(jobsArray);
-  
+        setLoading(false);
         let newCategories = jobsArray
           .flatMap((job) => job.tags)
           .filter((tag) => tag.name.toLowerCase() === "category" && tag.value)
@@ -33,11 +32,16 @@ export const AppProvider = ({ children }) => {
             }
             return categoryName;
           });
-  
-        setCategories([...new Set(newCategories)].map(category => 
-          category.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
-        ));
-  
+
+        setCategories(
+          [...new Set(newCategories)].map((category) =>
+            category
+              .split(" ")
+              .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+              .join(" ")
+          )
+        );
+
         setLoading(false);
       })
       .catch((err) => {
@@ -48,8 +52,6 @@ export const AppProvider = ({ children }) => {
         console.error("Failed to fetch jobs:", err);
       });
   }, []);
-  
-  
 
   const isEmpty = !loading && jobs.length === 0;
 

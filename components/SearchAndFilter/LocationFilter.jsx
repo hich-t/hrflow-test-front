@@ -1,13 +1,21 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Combobox, Transition } from '@headlessui/react';
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 import { useAppContext } from '../../context/AppContext'
 const LocationFilter = ({ onChange }) => {
-  const { jobs, isDarkMode } = useAppContext();
-  const [selectedLocation, setSelectedLocation] = useState('');
-  const [query, setQuery] = useState('');
-  const textColor = isDarkMode ? 'text-white' : 'text-darkblue';
+    const { jobs, isDarkMode } = useAppContext();
+    const [selectedLocation, setSelectedLocation] = useState('');
+    const [query, setQuery] = useState('');
+    const textColor = isDarkMode ? 'text-white' : 'text-darkblue';
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+          const initialLocation = localStorage.getItem('selectedLocation') || '';
+          setSelectedLocation(initialLocation);
+        }
+      }, []);
+  
 
   const locations = Array.from(new Set(jobs.map(job => job.location?.text).filter(Boolean)));
 
@@ -21,6 +29,7 @@ const LocationFilter = ({ onChange }) => {
     setSelectedLocation('');
     setQuery('');
     onChange('');
+    localStorage.removeItem('selectedLocation');
   };
 
   const handleLocationChange = (selected) => {

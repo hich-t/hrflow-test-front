@@ -1,19 +1,26 @@
 import React, { useState, useEffect } from "react";
 import Spinner from "../components/status/Spinner";
 import Empty from "../components/status/Empty";
+import ErrorModal from "../components/status/ErrorModal"
 import { useAppContext } from "../context/AppContext";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import ReactPaginate from "react-paginate";
+
 
 const JobsCards = () => {
   const [expandedJobId, setExpandedJobId] = useState(null);
   const [sortBy, setSortBy] = useState("name"); 
   const { filteredJobs, loading, isDarkMode, error, isEmpty } = useAppContext();
+  const [currentPage, setCurrentPage] = useState(0); 
+  const itemsPerPage = 10; 
 
   const bgColor = isDarkMode ? "bg-darkblue" : "bg-white";
   const textColor = isDarkMode ? "text-white" : "text-darkblue";
   const skillButtonBgColor = isDarkMode ? "bg-midblue" : "bg-darkblue";
+  const [isErrorModalOpen, setIsErrorModalOpen] = useState(false);
+
 
   const handleCardClick = (jobId) => {
     setExpandedJobId(expandedJobId === jobId ? null : jobId);
@@ -72,9 +79,20 @@ const JobsCards = () => {
     updateJobCard(items); 
   };
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
+  useEffect(() => {
+    if (error) {
+      setIsErrorModalOpen(true);
+    }
+  }, [error]);
+
+if (error) {
+  return(
+    <>
+    <ErrorModal isOpen={isErrorModalOpen} setIsOpen={setIsErrorModalOpen} />
+    <Empty />
+    </>
+    )
+}
 
   if (isEmpty) {
     return <Empty />;
@@ -83,6 +101,13 @@ const JobsCards = () => {
   if (loading) {
     return <Spinner />;
   }
+
+  const pageCount = Math.ceil(filteredJobs.length / itemsPerPage);
+  const jobsDisplayed = jobCard.slice(
+    currentPage * itemsPerPage,
+    (currentPage + 1) * itemsPerPage
+  );
+
 
   return (
     <div className="flex flex-col w-4/5 items-center justify-center gap-8 font-quick">
@@ -143,7 +168,7 @@ const JobsCards = () => {
               ref={provided.innerRef}
               {...provided.droppableProps}
             >
-              {jobCard.map((job, index) => (
+              {jobsDisplayed.map((job, index) => (
                 <Draggable
                   key={job.id.toString()}
                   draggableId={job.id.toString()}
@@ -299,6 +324,19 @@ const JobsCards = () => {
           )}
         </Droppable>
       </DragDropContext>
+      <ReactPaginate
+    className={`${textColor} font-quick font-bold flex mb-8 justify-center`}
+    previousLabel={"← Previous"}
+    nextLabel={"Next →"}
+    pageCount={pageCount}
+    onPageChange={(event) => setCurrentPage(event.selected)}
+    containerClassName={"pagination flex list-none"}
+    pageLinkClassName={"mx-2 px-3 py-2 rounded-md"}
+    previousLinkClassName={"mx-2 px-3 py-2 rounded-md"}
+    nextLinkClassName={"mx-2 px-3 py-2 rounded-md"}
+    disabledClassName={"opacity-50 cursor-not-allowed"}
+    activeClassName={"bg-lightblue text-white rounded-md"}
+  />
     </div>
   );
 };

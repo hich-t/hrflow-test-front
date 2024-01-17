@@ -1,13 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Combobox, Transition } from '@headlessui/react';
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'; 
 import { useAppContext } from '../../context/AppContext';
 
 const CategoryFilter = ({ onChange }) => {
   const { categories, isDarkMode } = useAppContext();
-  const [selectedCategory, setSelectedCategory] = useState(categories[0] || '');
+  const [selectedCategory, setSelectedCategory] = useState('');
   const [query, setQuery] = useState('');
   const textColor = isDarkMode ? 'text-white' : 'text-darkblue';
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const initialCategory = localStorage.getItem('selectedCategory') || '';
+      setSelectedCategory(initialCategory);
+    }
+  }, [categories]);
 
   const filteredCategories = query === ''
     ? categories
@@ -19,6 +26,7 @@ const CategoryFilter = ({ onChange }) => {
     setSelectedCategory('');
     setQuery('');
     onChange('');
+    localStorage.removeItem('selectedCategory');
   };
 
   const handleCategoryChange = (selected) => {
