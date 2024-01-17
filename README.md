@@ -10,34 +10,45 @@ The application is hosted and can be accessed at [HRFlow Job Listings](https://h
 
 ## Features
 
-- **Responsive Design**: Optimized for both mobile and desktop screens.
-  ![Responsive Design Screenshot](Assets/images/screenshots/expand.png)
+**Responsive Design**
+Optimized for both mobile and desktop screens.
 
-- **Dark Mode**: An accessibility feature for enhanced readability.
-  ![Dark Mode Screenshot](Assets/images/screenshots/sorting.png)
+**Filters**
+Users can filter jobs by category and location.
+<br/><img src="https://raw.githubusercontent.com/hich-t/hrflow-test-front/main/public/Assets/images/screenshots/filtering.png" width="50%"/>
 
-- **Search Functionality**: Allows users to search for specific jobs.
-  ![Search Functionality Screenshot](Assets/images/screenshots/search.png)
+**Sorting Options**
+Sort jobs alphabetically or by date.
+<br/><img src="https://raw.githubusercontent.com/hich-t/hrflow-test-front/main/public/Assets/images/screenshots/sorting.png" width="50%"/>
 
-- **Filters**: Users can filter jobs by category and location.
-  ![Filters Screenshot](Assets/images/screenshots/filtering.png)
+**Search Functionality**
+Allows users to search for specific jobs.
+<br/><img src="https://raw.githubusercontent.com/hich-t/hrflow-test-front/main/public/Assets/images/screenshots/search.png" width="50%"/>
 
-- **Sorting Options**: Sort jobs alphabetically or by date.
-  ![Sorting Options Screenshot](Assets/images/screenshots/sorting.png)
+**Dark Mode**
+An accessibility feature for enhanced readability.
+<br/><img src="https://raw.githubusercontent.com/hich-t/hrflow-test-front/main/public/Assets/images/screenshots/darkmode.png" width="50%"/>
 
-- **Drag and Drop**: Interactively rearrange job cards.
-  ![Drag and Drop Screenshot](Assets/images/screenshots/sorting.png)
+**Drag and Drop**
+Interactively rearrange job cards.
+<br/><img src="https://raw.githubusercontent.com/hich-t/hrflow-test-front/main/public/Assets/images/screenshots/dnd.png" width="50%"/>
 
-- **Pagination**: Displays 10 job listings at a time.
-  ![Pagination Screenshot](Assets/images/screenshots/filtering.png)
 
-- **State Handling**: Efficiently manages loading, empty, and error states.
-  - Loading State: ![Loading State Screenshot](Assets/images/screenshots/loading.png)
-  - Empty State: ![Empty State Screenshot](Assets/images/screenshots/empty.png)
-  - Error State: ![Error State Screenshot](Assets/images/screenshots/error.png)
 
-- **Local Cache Storing**: Maintains a local cache of user settings and data for a smoother user experience.
-  ![Local Cache Storing Screenshot](Assets/images/screenshots/expand.png)
+**State Handling**
+Efficiently manages loading, empty, and error states.
+
+* Loading State
+  <br/><img src="https://raw.githubusercontent.com/hich-t/hrflow-test-front/main/public/Assets/images/screenshots/loading.png" width="50%"/>
+  
+* Empty State
+  <br/><img src="https://raw.githubusercontent.com/hich-t/hrflow-test-front/main/public/Assets/images/screenshots/empty.png" width="50%"/>
+  
+* Error State
+  <br/><img src="https://raw.githubusercontent.com/hich-t/hrflow-test-front/main/public/Assets/images/screenshots/error.png" width="50%"/>
+
+**Local Cache Storing**
+Maintains a local cache of user settings and data for a smoother user experience.
 
 ## How to Use
 
