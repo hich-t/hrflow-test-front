@@ -51,7 +51,7 @@ const LocationFilter = ({ onChange, resetFilters, isReset }) => {
       <Combobox value={selectedLocation} onChange={handleLocationChange}>
         <div className="relative">
           <Combobox.Input
-            className="w-full border text-black font-quick border-lightblue rounded-md shadow-sm pl-3 pr-10 py-2 focus:outline-none focus:ring-lightblue focus:border-lightblue sm:text-sm"
+            className="w-full border text-black font-quick border-lightblue rounded-md shadow-sm pl-3 pr-10 py-2 hover:outline-none hover:ring-1 hover:ring-offset-1 hover:ring-offset-lightblue hover:ring-lightblue focus:outline-none focus:ring-lightblue focus:border-lightblue sm:text-sm"
             onChange={(event) => setQuery(event.target.value)}
             displayValue={(location) => location}
             placeholder="Select a location"

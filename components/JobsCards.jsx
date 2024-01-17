@@ -18,6 +18,8 @@ const JobsCards = () => {
 
   const bgColor = isDarkMode ? "bg-darkblue" : "bg-white";
   const textColor = isDarkMode ? "text-white" : "text-darkblue";
+  const textColor2 = isDarkMode ? "text-white" : "text-midblue";
+
   const skillButtonBgColor = isDarkMode ? "bg-midblue" : "bg-darkblue";
   const [isErrorModalOpen, setIsErrorModalOpen] = useState(false);
 
@@ -331,7 +333,7 @@ if (error) {
         </Droppable>
       </DragDropContext>
       <ReactPaginate
-    className={`${textColor} font-quick font-bold flex mb-8 justify-center`}
+    className={`${textColor2} font-quick font-bold flex mb-8 justify-center`}
     previousLabel={"← Previous"}
     nextLabel={"Next →"}
     pageCount={pageCount}

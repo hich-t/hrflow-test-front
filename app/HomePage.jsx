@@ -3,8 +3,9 @@
 import { useAppContext } from "../context/AppContext"
 
 import TopMenu from "../components/TopMenu"
-import JobsCards from "@/components/JobsCards"
-import SearchAndFilter from "@/components/SearchAndFilter/SearchandFilter"
+import JobsCards from "../components/JobsCards"
+import SearchAndFilter from "../components/SearchAndFilter/SearchandFilter"
+import Footer from "../components/Footer"
 
 const HomePage = () => {
 
@@ -17,6 +18,7 @@ const HomePage = () => {
             <TopMenu />
             <SearchAndFilter />
             <JobsCards />
+            <Footer />
         </main>
     )
 }

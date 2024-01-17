@@ -69,7 +69,7 @@ const SearchAndFilter = () => {
   };
 
   return (
-    <div className="mt-12 mb-12 flex flex-col sm:flex-row items-center justify-center gap-8 w-full sm:w-3/5">
+    <div className="mt-12 mb-12 flex flex-col sm:flex-row items-center justify-center gap-8 w-full sm:w-9/12">
       <div className="flex flex-col w-4/5 sm:w-1/3 ">
         <h1
           className={`text-left mb-4 font-quick font-light text-xl ${textColor}`}
@@ -86,10 +86,10 @@ const SearchAndFilter = () => {
     <CategoryFilter onChange={handleCategoryChange} resetFilters={resetFilters} isReset={isReset}/>
     <LocationFilter onChange={handleLocationChange} resetFilters={resetFilters} isReset={isReset}/>
     <button
-      className="bg-white border border-lightblue text-gray-400 font-quick rounded-md w-1/2 h-10"
+      className="bg-white border border-lightblue text-lightblue font-quick text-sm rounded-md w-1/3 h-10 hover:outline-none hover:ring-1 hover:ring-offset-1 hover:ring-offset-lightblue hover:ring-lightblue"
       onClick={resetFilters}
     >
-      Reset
+      Reset All
     </button>
   </div>
 </div>

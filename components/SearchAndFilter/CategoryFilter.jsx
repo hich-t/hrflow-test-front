@@ -48,7 +48,7 @@ const CategoryFilter = ({ onChange, resetFilters, isReset }) => {
       <Combobox value={selectedCategory} onChange={handleCategoryChange}>
         <div className="relative">
           <Combobox.Input
-            className=" text-black w-full border font-quick border-lightblue rounded-md shadow-sm pl-3 pr-10 py-2 focus:outline-none focus:ring-lightblue focus:border-lightblue sm:text-sm"
+            className=" text-black w-full border font-quick border-lightblue rounded-md shadow-sm pl-3 pr-10 py-2 focus:outline-none focus:ring-lightblue focus:border-lightblue sm:text-sm hover:outline-none hover:ring-1 hover:ring-offset-1 hover:ring-offset-lightblue hover:ring-lightblue"
             onChange={(event) => setQuery(event.target.value)}
             displayValue={(category) => category}
             placeholder="Select a category"
