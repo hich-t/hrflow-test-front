@@ -1,17 +1,26 @@
 "use client"
 
-import React, { useState } from "react";
+import { Island_Moments } from "next/font/google";
+import React, { useState, useEffect } from "react";
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = ({ onSearch, isReset }) => {
   const [query, setQuery] = useState("");
 
   const handleInputChange = (event) => {
-    const newQuery = event.target.value;
+    let newQuery = event.target.value;
     setQuery(newQuery);
     if (onSearch) {
       onSearch(newQuery);
     }
   };
+
+useEffect(()=> {
+    if (isReset) {
+        setQuery('')
+    }
+
+}, [isReset])
+
 
   return (
     <div className="w-full max-w-md sm:mr-10 mb-6 sm:mb-0">

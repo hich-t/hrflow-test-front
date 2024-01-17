@@ -3,7 +3,7 @@ import { Combobox, Transition } from '@headlessui/react';
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'; 
 import { useAppContext } from '../../context/AppContext';
 
-const CategoryFilter = ({ onChange }) => {
+const CategoryFilter = ({ onChange, resetFilters, isReset }) => {
   const { categories, isDarkMode } = useAppContext();
   const [selectedCategory, setSelectedCategory] = useState('');
   const [query, setQuery] = useState('');
@@ -16,6 +16,7 @@ const CategoryFilter = ({ onChange }) => {
     }
   }, [categories]);
 
+
   const filteredCategories = query === ''
     ? categories
     : categories.filter((category) =>
@@ -27,6 +28,7 @@ const CategoryFilter = ({ onChange }) => {
     setQuery('');
     onChange('');
     localStorage.removeItem('selectedCategory');
+    resetFilters();
   };
 
   const handleCategoryChange = (selected) => {
@@ -34,6 +36,11 @@ const CategoryFilter = ({ onChange }) => {
     onChange(selected);
   };
 
+ useEffect(()=> {
+  if (isReset){
+    clearSelection()
+  }
+ }, [isReset])
 
 
   return (

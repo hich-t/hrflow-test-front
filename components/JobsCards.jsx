@@ -48,6 +48,8 @@ const JobsCards = () => {
   ];
 
   const sortedJobs = [...filteredJobs];
+  console.log("filteredJobs with tasks:", filteredJobs);
+
 
   const [jobCard, updateJobCard] = useState([]);
 
@@ -258,6 +260,7 @@ if (error) {
                           {new Date(job.created_at).toLocaleDateString()}
                         </p>
                       </div>
+
                       {expandedJobId === job.id && (
                         <div
                           className={`${textColor} pt-4 max-w-prose mx-auto text-center text-justify text-sm`}
@@ -297,6 +300,9 @@ if (error) {
                               </ul>
                             </div>
                           )}
+                          <p className={`${textColor} mt-2 mb-2 text-sm italic`}>
+                            Category: {job.tags.find((tag) => tag.name === "category")?.value}
+                          </p>
                           <p className="mt-4 mb-4 italic">
                             Updated on:{" "}
                             {new Date(job.updated_at).toLocaleDateString()}
