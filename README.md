@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# HRFlow Job Listings
 
-## Getting Started
+## Description
 
-First, run the development server:
+HRFlow Job Listings is a web-based application built with NextJS 14, designed to display job opportunities in an interactive and user-friendly manner. It fetches job data from the HrFlow API and presents them in expandable cards, offering a seamless job-search experience.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Accessing the App
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application is hosted and can be accessed at [HRFlow Job Listings](https://hrflow-test-front.vercel.app/). There is no installation required, as it is fully web-based.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Responsive Design**: Optimized for both mobile and desktop screens.
+- **Dark Mode**: An accessibility feature for enhanced readability.
+- **Search Functionality**: Allows users to search for specific jobs.
+- **Filters**: Users can filter jobs by category and location.
+- **Sorting Options**: Sort jobs alphabetically or by date.
+- **Drag and Drop**: Interactively rearrange job cards.
+- **Pagination**: Displays 10 job listings at a time.
+- **State Handling**: Efficiently manages loading, empty, and error states.
 
-## Learn More
+## How to Use
 
-To learn more about Next.js, take a look at the following resources:
+1. Open the [web app](https://hrflow-test-front.vercel.app/).
+2. Browse through the job listings presented in cards.
+3. Use the search bar to find specific jobs or filter by category/location.
+4. Sort the listings as per your preference.
+5. Drag and drop cards to rearrange the order.
+6. Click on a card to expand it for more details.
+7. Switch between light and dark mode for comfortable viewing.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This application is not affiliated with HrFlow and is developed for demonstration purposes.

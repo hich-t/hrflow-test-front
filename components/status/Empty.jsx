@@ -1,7 +1,7 @@
 import React from "react";
 import { useAppContext } from "../../context/AppContext";
 
-const Spinner = () => {
+const Empty = () => {
   const { isDarkMode, toggleDarkMode } = useAppContext();
   const textColor = isDarkMode ? "text-white" : "text-darkblue";
 
@@ -15,4 +15,4 @@ const Spinner = () => {
   );
 };
 
-export default Spinner;
+export default Empty;
