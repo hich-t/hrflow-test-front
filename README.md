@@ -11,13 +11,33 @@ The application is hosted and can be accessed at [HRFlow Job Listings](https://h
 ## Features
 
 - **Responsive Design**: Optimized for both mobile and desktop screens.
+  ![Responsive Design Screenshot](Assets/images/screenshots/expand.png)
+
 - **Dark Mode**: An accessibility feature for enhanced readability.
+  ![Dark Mode Screenshot](Assets/images/screenshots/sorting.png)
+
 - **Search Functionality**: Allows users to search for specific jobs.
+  ![Search Functionality Screenshot](Assets/images/screenshots/search.png)
+
 - **Filters**: Users can filter jobs by category and location.
+  ![Filters Screenshot](Assets/images/screenshots/filtering.png)
+
 - **Sorting Options**: Sort jobs alphabetically or by date.
+  ![Sorting Options Screenshot](Assets/images/screenshots/sorting.png)
+
 - **Drag and Drop**: Interactively rearrange job cards.
+  ![Drag and Drop Screenshot](Assets/images/screenshots/sorting.png)
+
 - **Pagination**: Displays 10 job listings at a time.
+  ![Pagination Screenshot](Assets/images/screenshots/filtering.png)
+
 - **State Handling**: Efficiently manages loading, empty, and error states.
+  - Loading State: ![Loading State Screenshot](Assets/images/screenshots/loading.png)
+  - Empty State: ![Empty State Screenshot](Assets/images/screenshots/empty.png)
+  - Error State: ![Error State Screenshot](Assets/images/screenshots/error.png)
+
+- **Local Cache Storing**: Maintains a local cache of user settings and data for a smoother user experience.
+  ![Local Cache Storing Screenshot](Assets/images/screenshots/expand.png)
 
 ## How to Use
 
@@ -28,7 +48,6 @@ The application is hosted and can be accessed at [HRFlow Job Listings](https://h
 5. Drag and drop cards to rearrange the order.
 6. Click on a card to expand it for more details.
 7. Switch between light and dark mode for comfortable viewing.
-
 
 ---
 
