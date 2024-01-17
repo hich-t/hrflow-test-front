@@ -50,7 +50,6 @@ const JobsCards = () => {
   ];
 
   const sortedJobs = [...filteredJobs];
-  console.log("filteredJobs with tasks:", filteredJobs);
 
 
   const [jobCard, updateJobCard] = useState([]);

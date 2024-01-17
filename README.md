@@ -1,17 +1,19 @@
-# HRFlow Job Listings
+# HrFlow Job Listings
 
 ## Description
 
-HRFlow Job Listings is a web-based application built with NextJS 14, designed to display job opportunities in an interactive and user-friendly manner. It fetches job data from the HrFlow API and presents them in expandable cards, offering a seamless job-search experience.
+HrFlow Job Listings is a web-based application built with NextJS 14, designed to display job opportunities in an interactive and user-friendly manner. It fetches job data from the HrFlow API and presents them in expandable cards, offering a seamless job-search experience.
 
 ## Accessing the App
 
-The application is hosted and can be accessed at [HRFlow Job Listings](https://hrflow-test-front.vercel.app/). There is no installation required, as it is fully web-based.
+The application is hosted on vercel and can be accessed at [HrFlow Job Listings](https://hrflow-test-front.vercel.app/). There is no installation required, as it is fully web-based.
 
 ## Features
 
 **Responsive Design**
 Optimized for both mobile and desktop screens.
+<br/><img src="https://raw.githubusercontent.com/hich-t/hrflow-test-front/main/public/Assets/images/screenshots/mobile.jpg" width="50%"/>
+
 
 **Filters**
 Users can filter jobs by category and location.
