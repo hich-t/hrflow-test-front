@@ -12,7 +12,6 @@ const SearchAndFilter = () => {
   const textColor = isDarkMode ? "text-white" : "text-darkblue";
 
   useEffect(() => {
-    // Initialize state from localStorage
     setSearchQuery(localStorage.getItem("searchQuery") || "");
     setSelectedCategory(localStorage.getItem("selectedCategory") || "");
     setSelectedLocation(localStorage.getItem("selectedLocation") || "");
